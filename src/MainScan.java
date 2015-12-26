@@ -19,8 +19,16 @@ public class MainScan {
                         "http://s3-media1.fl.yelpcdn.com/bphoto/e0b27Zk_u2qpvgPcRy99iw/o.jpg")
                 .asJson();
 
-        // TODO: WRITE CODE TO PARSE THE JSON NODES TO GET ARGUMENT IN TOKEN
+        // {
+        // "token": "fhr1thsRYDm6Vgwx2hTgBw",
+        // "url":
+        // "//d1spq65clhrg1f.cloudfront.net/uploads/image_request/image/35/35311/35311614/o.jpg"
+        // }
+
         System.out.println(response.getBody());
+
+        String token = (String) response.getBody().getObject().get("token");
+        System.out.println(token);
 
     }
 
